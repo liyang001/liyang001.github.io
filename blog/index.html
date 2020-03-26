@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Category: 博客 | 风成的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="个人github博客搭建   准备工作  github账号配置  node、npm包管理器  安装git   安装 hexo 域名注册 (非必须)   1.账号配置 github账号1.注册登录github网站 2.Create a new repository 新建仓库 3.Repository name 设置仓库名称 格式为 username.github.io 4.master分支 选择">
+<meta property="og:type" content="website">
+<meta property="og:title" content="博客搭建">
+<meta property="og:url" content="http://liyang.comeonone.com/blog/index.html">
+<meta property="og:site_name" content="风成的博客">
+<meta property="og:description" content="个人github博客搭建   准备工作  github账号配置  node、npm包管理器  安装git   安装 hexo 域名注册 (非必须)   1.账号配置 github账号1.注册登录github网站 2.Create a new repository 新建仓库 3.Repository name 设置仓库名称 格式为 username.github.io 4.master分支 选择">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2020-03-26T15:11:14.072Z">
+<meta property="article:author" content="liyang">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="风成的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    
+    <div id="header-inner" class="inner">
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://liyang.comeonone.com"></form>
+      </div>
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">首页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/about">关于</a>
+        
+      </nav>
+      
+    </div>
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">风成的博客</a>
+      </h1>
+      
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/blog/index.html" class="article-date">
+  <time datetime="2020-02-01T16:00:00.000Z" itemprop="datePublished">2020-02-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      博客搭建
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents -->
+        
+        <div style="font-size:18px;color:#333;line-height:20px;font-family:楷体;">
+
+<p>个人github博客搭建 </p>
+<hr>
+<h5 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作 "></a><font style="font-weight:700;color:#333;">准备工作 </font></h5><ul>
+<li>github账号配置 </li>
+<li>node、npm包管理器 </li>
+<li>安装git  </li>
+<li>安装 hexo</li>
+<li>域名注册 (非必须)</li>
+</ul>
+<hr>
+<h5 id="1-账号配置"><a href="#1-账号配置" class="headerlink" title="1.账号配置"></a><font style="font-weight:700;color:#333;font-size:22px;line-height:30px;">1.账号配置</font></h5><h6 id="github账号"><a href="#github账号" class="headerlink" title=" github账号"></a><font style="font-weight:700;color:#333;"> github账号</font></h6><pre><code>1.注册登录github网站
+2.Create a new repository 新建仓库
+3.Repository name 设置仓库名称 格式为 username.github.io
+4.master分支 选择Public </code></pre><p>创建远程之后，可在Settings中配置 GitHub Pages </p>
+<pre><code>Source:  可指定建站拉取的分支 默认master  
+Theme Chooser: 选择初始化展示主题页面 
+Custom domain: 自定义域名</code></pre><h6 id="自定义域名"><a href="#自定义域名" class="headerlink" title=" 自定义域名"></a><font style="font-weight:700;color:#333;"> 自定义域名</font></h6><p>注册域名<br>可自行阿里云或其他机构注册域名</p>
+<p>域名解析配置</p>
+<pre><code>域名配置最常见有2种方式，CNAME和A记录，
+A记录就是把一个域名解析到一个IP地址（Address，特制数字IP地址）
+而CNAME记录就是把域名解析到另外一个域名。</code></pre><hr>
+<h5 id="2-安装node"><a href="#2-安装node" class="headerlink" title="2.安装node"></a><font style="font-weight:700;color:#333;font-size:22px;line-height:30px;">2.安装node</font></h5><pre><code>自行下载node并进行安装</code></pre><h5 id="3-安装git"><a href="#3-安装git" class="headerlink" title="3.安装git"></a><font style="font-weight:700;color:#333;font-size:22px;line-height:30px;">3.安装git</font></h5><pre><code>安装git 并配置SSH key (自行google)</code></pre><hr>
+<h5 id="4-关于hexo"><a href="#4-关于hexo" class="headerlink" title="4.关于hexo"></a><font style="font-weight:700;color:#333;font-size:22px;line-height:30px;">4.关于hexo</font></h5><p> 是一个快速、简单和强大的博客框架。 你用 Markdown (或其他标记语言)写文章，Hexo 在几秒钟内生成带有漂亮主题的静态文件。</p>
+<h6 id="安装"><a href="#安装" class="headerlink" title="安装"></a><font style="font-weight:700;color:#333;">安装</font></h6><pre><code>$ npm install -g hexo-cli
+or
+$ npm install hexo</code></pre><p>安装Hexo后 运行以下命令初始化</p>
+<pre><code>$ hexo init &lt;folder&gt;
+$ cd &lt;folder&gt;
+$ npm install    </code></pre><p>一旦初始化，这是你的项目文件夹的样子:</p>
+<pre><code>.
+├── _config.yml    // 站点配置文件。您可以在这里配置大多数设置。
+├── package.json   // 应用程序数据 安装包设置文件
+├── scaffolds      // 脚手架文件夹。创建新文章时，Hexo 将新文件置于脚手架上。
+├── source         // 源文件夹。 这就是你放网站内容的地方
+|   ├── _drafts   
+|   └── _posts
+└── themes        // themes 主题</code></pre><p>生成文件</p>
+<pre><code>$ hexo generate # 生成静态文件</code></pre><p>启动一个本地服务器 </p>
+<pre><code>$ hexo server -p 端口号</code></pre><p>部署</p>
+<pre><code>$ hexo deploy</code></pre><p>清除缓存文件</p>
+<pre><code>$ hexo clean</code></pre><h6 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a><font style="font-weight:700;color:#333;">常见命令</font></h6><pre><code>hexo new &quot;postName&quot; #新建文章
+hexo new page &quot;pageName&quot; #新建页面
+hexo generate #生成静态页面至public目录
+hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）
+hexo deploy #部署到GitHub
+hexo help  # 查看帮助
+hexo version  #查看Hexo的版本
+
+// 缩写
+hexo n == hexo new
+hexo g == hexo generate
+hexo s == hexo server
+hexo d == hexo deploy
+
+hexo s -g #生成并本地预览
+hexo d -g #生成并上传</code></pre><hr>
+<h6 id="tips"><a href="#tips" class="headerlink" title="tips"></a><font style="font-weight:700;color:#333;">tips</font></h6><p>1._config.yml 配置主题</p>
+<pre><code>_config.yml 配置的主题名称需要和themes下一致，不然会报错</code></pre><p>2.缺少hexo插件 </p>
+<pre><code>$ npm ls --depth 0  // 查看hexo插件安装情况</code></pre><p>3.Hexo CNAME文件在每次部署后删除了 </p>
+<pre><code>CNAME文件放置在source目录下</code></pre><h6 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a><font style="font-weight:700;color:#333;">参考链接</font></h6><p><a href="https://hexo.io/docs/github-pages" target="_blank" rel="noopener">hexo文档</a><br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo主题</a></p>
+<div style="display:none">
+[参考教程](http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa)
+[参考教程](https://blog.csdn.net/qq_34106574/article/details/82704883)
+</div>
+
+
+</div>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://liyang.comeonone.com/blog/index.html" data-id="ck88vgt600002asnz9ndc4um2" class="article-share-link">Share</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+ 
+<script src="/jquery/jquery.min.js"></script>
+
+  <div id="random_posts">
+    <h2>Recommended Posts</h2>
+    <div class="random_posts_ul">
+      <script>
+          var random_count =4
+          var site = {BASE_URI:'/'};
+          function load_random_posts(obj) {
+              var arr=site.posts;
+              if (!obj) return;
+              // var count = $(obj).attr('data-count') || 6;
+              for (var i, tmp, n = arr.length; n; i = Math.floor(Math.random() * n), tmp = arr[--n], arr[n] = arr[i], arr[i] = tmp);
+              arr = arr.slice(0, random_count);
+              var html = '<ul>';
+            
+              for(var j=0;j<arr.length;j++){
+                var item=arr[j];
+                html += '<li><strong>' + 
+                item.date + ':&nbsp;&nbsp;<a href="' + (site.BASE_URI+item.uri) + '">' + 
+                (item.title || item.uri) + '</a></strong>';
+                if(item.excerpt){
+                  html +='<div class="post-excerpt">'+item.excerpt+'</div>';
+                }
+                html +='</li>';
+                
+              }
+              $(obj).html(html + '</ul>');
+          }
+          $('.random_posts_ul').each(function () {
+              var c = this;
+              if (!site.posts || !site.posts.length){
+                  $.getJSON(site.BASE_URI + 'js/posts.js',function(json){site.posts = json;load_random_posts(c)});
+              } 
+               else{
+                load_random_posts(c);
+              }
+          });
+      </script>
+    </div>
+  </div>
+
+    
+  
+</article>
+ 
+     
+  <div class="comments" id="comments">
+    
+     
+       
+      <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    
+       
+      
+      
+  </div>
+ 
+  
+
+</section>
+           
+    <aside id="sidebar">
+  
+    
+
+  
+    
+    <div class="widget-wrap">
+    
+      <div class="widget" id="toc-widget-fixed">
+      
+        <strong class="toc-title">Content</strong>
+        <div class="toc-widget-list">
+              <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作 </span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-账号配置"><span class="toc-number">2.</span> <span class="toc-text">1.账号配置</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#github账号"><span class="toc-number">2.1.</span> <span class="toc-text"> github账号</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#自定义域名"><span class="toc-number">2.2.</span> <span class="toc-text"> 自定义域名</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-安装node"><span class="toc-number">3.</span> <span class="toc-text">2.安装node</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-安装git"><span class="toc-number">4.</span> <span class="toc-text">3.安装git</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-关于hexo"><span class="toc-number">5.</span> <span class="toc-text">4.关于hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#安装"><span class="toc-number">5.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#常见命令"><span class="toc-number">5.2.</span> <span class="toc-text">常见命令</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#tips"><span class="toc-number">5.3.</span> <span class="toc-text">tips</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#参考链接"><span class="toc-number">5.4.</span> <span class="toc-text">参考链接</span></a></li></ol></li></ol>
+          </div>
+      </div>
+    </div>
+
+  
+    
+
+  
+    
+  
+    
+  
+    
+
+  
+    
+  
+    <!--微信公众号二维码-->
+
+
+  
+</aside>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-left">
+      &copy; 2014 - 2020 liyang&nbsp;|&nbsp;
+      Theme by <a href="https://github.com/giscafer/hexo-theme-cafe/" target="_blank">Cafe</a>
+    </div>
+     <div id="footer-right">
+      Contact&nbsp;|&nbsp;youemail@outlook.com
+    </div>
+  </div>
+</footer>
+ 
+<script src="/jquery/jquery.min.js"></script>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/about" class="mobile-nav-link">关于</a>
+  
+</nav>
+    <img class="back-to-top-btn" src="/images/fly-to-top.png"/>
+<script>
+// Elevator script included on the page, already.
+window.onload = function() {
+  var elevator = new Elevator({
+    selector:'.back-to-top-btn',
+    element: document.querySelector('.back-to-top-btn'),
+    duration: 1000 // milliseconds
+  });
+}
+</script>
+      
+
+  
+    <script>
+      var cloudTieConfig = {
+        url: document.location.href, 
+        sourceId: "",
+        productKey: "e2fb4051c49842688ce669e634bc983f",
+        target: "cloud-tie-wrapper"
+      };
+    </script>
+    <script src="https://img1.ws.126.net/f2e/tie/yun/sdk/loader.js"></script>
+    
+
+  
+
+
+
+
+
+
+
+<!-- author:forvoid begin -->
+<!-- author:forvoid begin -->
+
+<!-- author:forvoid end -->
+
+<!-- author:forvoid end -->
+
+
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      })
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      })
+    </script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/mathjax/MathJax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+ 
+<script src="/js/is.js"></script>
+
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/elevator.js"></script>
+
+  </div>
+</body>
+</html>
