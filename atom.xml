@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liyang.comeonone.com/"/>
-  <updated>2020-03-28T03:01:41.636Z</updated>
+  <updated>2020-03-29T15:20:05.217Z</updated>
   <id>http://liyang.comeonone.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一问---React生命周期</title>
+    <link href="http://liyang.comeonone.com/2020/03/29/daily-20200329/"/>
+    <id>http://liyang.comeonone.com/2020/03/29/daily-20200329/</id>
+    <published>2020-03-28T16:00:00.000Z</published>
+    <updated>2020-03-29T15:20:05.217Z</updated>
+    
+    <content type="html"><![CDATA[<div style="font-size:20px;color:#333;line-height:24px;font-family:楷体;"> <h2 id="React生命周期"><a href="#React生命周期" class="headerlink" title="React生命周期"></a>React生命周期</h2><pre><code>React版本 16.13.1</code></pre><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><pre><code>constructor(props)componentWillMount()  ===&gt; UNSAFE_componentWillMount()render()componentDidMount()componentWillReceiveProps(nextProps) ===&gt; UNSAFE_componentWillReceivePropsshouldComponentUpdate(nextProps, nextState)componentWillUpdate(nextProps, nextState) ===&gt; UNSAFE_componentWillUpdatecomponentDidUpdate(prevProps, prevState, snapshot)componentWillUnmount()componentDidCatch</code></pre><p>新的生命周期函数</p><p><strong>static getDerivedStateFromProps(nextProps, prevState)</strong></p><p><strong>static getDerivedStateFromError()</strong></p><p><strong>getSnapshotBeforeUpdate()</strong></p><hr><h4 id="constructor-props"><a href="#constructor-props" class="headerlink" title="constructor(props)"></a><strong style="font-size:20px;">constructor(props)</strong></h4><pre><code>在 React 组件挂载之前，会调用它的构造函数。在这里可以进行state的初始化操作和为事件处理函数绑定实例</code></pre><hr><h4 id="componentWillMount"><a href="#componentWillMount" class="headerlink" title="componentWillMount()"></a><strong><del>componentWillMount()</del></strong></h4><p><font style="color:blue;">在挂载之前被调用。它在 render() 之前调用，因此在此方法中同步调用 setState() 不会触发额外渲染</font></p><p>此方法是服务端渲染唯一会调用的生命周期函数</p><pre><code>React 16.3版本中引入UNSAFE_componentWillMount别名React 16.X版本中采用componentWillMount()会产生警告警告React 17.0版本删除 componentWillMount()</code></pre><hr><h4 id="render"><a href="#render" class="headerlink" title="render()"></a><strong>render()</strong></h4><p><font style="color:blue;">render() 方法是 class 组件中唯一必须实现的方法。<br>通过createElement方法返回对应类型的react渲染数据对象  </font></p><p>render() 函数应该为纯函数,不能够有副作用</p><hr><h4 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount()"></a><strong>componentDidMount()</strong></h4><p><font style="color:blue;">在组件挂载后（插入 DOM 树中）立即调用，在此处可以进行一些AJXA、DOM获取、订阅等副作用的操作</font></p><hr><h4 id="componentWillReceiveProps-nextProps"><a href="#componentWillReceiveProps-nextProps" class="headerlink" title="componentWillReceiveProps(nextProps)"></a><strong><del>componentWillReceiveProps(nextProps)</del></strong></h4><p><font style="color:blue;">在已挂载的组件接收新的 props 之前被调用</font></p><p>在挂载过程中不会调用，在组件props改变时候才会触发，内部this.state的改变不会触发componentWillReceiveProps()</p><pre><code>React 16.3版本中引入UNSAFE_componentWillReceiveProps别名React 16.X版本中采用componentWillReceiveProps()会产生警告警告React 17.0版本删除 componentWillReceiveProps()</code></pre><hr><h4 id="shouldComponentUpdate-nextProps-nextState"><a href="#shouldComponentUpdate-nextProps-nextState" class="headerlink" title="shouldComponentUpdate(nextProps, nextState)"></a><strong>shouldComponentUpdate(nextProps, nextState)</strong></h4><p><font style="color:blue;">当 props 或 state 发生变化时，shouldComponentUpdate 会在渲染执行之前被调用。返回值默认为 true。首次渲染或使用 forceUpdate() 时不会调用该方法。</font></p><ul><li><p>根据 <strong>shouldComponentUpdate 的返回值</strong>，判断 React 组件的输出是否受当前 state 或 props 更改的影响。返回false则当下更改不会影响组件</p></li><li><p>返回 false 并不会阻止子组件在 state 更改时重新渲染</p></li><li><p>目前版本 如果 shouldComponentUpdate 返回 false，则不会调用<strong  style="color:red;">UNSAFE_componentWillUpdate，render 和 componentDidUpdate</strong></p></li><li><p>在此中可以做是否渲染的优化操作</p></li></ul><hr><h4 id="componentWillUpdate-nextProps-nextState"><a href="#componentWillUpdate-nextProps-nextState" class="headerlink" title="componentWillUpdate(nextProps, nextState)"></a><strong><del>componentWillUpdate(nextProps, nextState)</del></strong></h4><p><font style="color:blue;">当组件收到新的 props 或 state 时，会在渲染之前调用 componentWillUpdate。使用此作为在更新发生之前执行准备更新的机会。初始渲染不会调用此方法。</font></p><pre><code>React 16.3版本中引入UNSAFE_componentWillUpdate别名React 16.X版本中采用 componentWillUpdate() 会产生警告警告React 17.0版本删除 componentWillUpdate()</code></pre><hr><h4 id="componentDidUpdate-prevProps-prevState-snapshot"><a href="#componentDidUpdate-prevProps-prevState-snapshot" class="headerlink" title="componentDidUpdate(prevProps, prevState, snapshot)"></a><strong>componentDidUpdate(prevProps, prevState, snapshot)</strong></h4><p><font style="color:blue;">在更新后会被立即调用。首次渲染不会执行此方法。</font></p><hr><h4 id="componentWillUnmount"><a href="#componentWillUnmount" class="headerlink" title="componentWillUnmount()"></a><strong>componentWillUnmount()</strong></h4><p><font style="color:blue;">在组件卸载及销毁之前直接调用。在此方法中执行必要的清理操作，例如，清除 timer，取消网络请求或清除在 componentDidMount() 中创建的订阅等。</font></p><hr><h4 id="componentDidCatch-error-info"><a href="#componentDidCatch-error-info" class="headerlink" title="componentDidCatch(error, info)"></a><strong>componentDidCatch(error, info)</strong></h4><p><font style="color:blue;">此生命周期在后代组件抛出错误后被调用。</font></p><p>其接受两个参数</p><pre><code>1.error 抛出的错误2.info 带有 componentStack key 的对象，其中包含有关组件引发错误的栈信息。</code></pre><hr><h4 id="getDerivedStateFromProps-props-state"><a href="#getDerivedStateFromProps-props-state" class="headerlink" title="getDerivedStateFromProps(props,state)"></a><strong style="color:red;">getDerivedStateFromProps(props,state)</strong></h4><p><font style="color:blue;">getDerivedStateFromProps 会在调用 render 方法之前调用，并且在初始挂载及后续更新时都会被调用。它应返回一个对象来更新 state，如果返回 null 则不更新任何内容。</font></p><pre><code>static getDerivedStateFromProps(props, state)</code></pre><p>此方法可看做componentWillMount和componentWillReceiveProps的结合，但是有一些区别</p><p>1.在此静态方法中无权访问组件实例</p><p>2.需要返回一个对象更新state</p><p>3.每次渲染前触发此方法，componentWillReceiveProps仅在父组件重新渲染触发</p><hr><h4 id="getSnapshotBeforeUpdate-prevProps-PrevState"><a href="#getSnapshotBeforeUpdate-prevProps-PrevState" class="headerlink" title="getSnapshotBeforeUpdate(prevProps,PrevState)"></a><strong style="color:red;">getSnapshotBeforeUpdate(prevProps,PrevState)</strong></h4><p><font style="color:blue;">getSnapshotBeforeUpdate() 在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM中捕获一些信息（例如，滚动位置）。此生命周期的任何返回值将作为参数传递给 componentDidUpdate()。  </font>  </p><h4 id="getDerivedStateFromError-error"><a href="#getDerivedStateFromError-error" class="headerlink" title="getDerivedStateFromError(error)"></a><strong style="color:red;">getDerivedStateFromError(error)</strong></h4><p><font style="color:blue;">此生命周期会在后代组件抛出错误后被调用。它将抛出的错误作为参数，并返回一个值以更新 state </font>  </p><pre><code>static getDerivedStateFromError(error) {    // 更新 state 使下一次渲染可以显降级 UI    return { hasError: true };  }</code></pre><hr><h3 id="生命周期执行流程"><a href="#生命周期执行流程" class="headerlink" title="生命周期执行流程"></a>生命周期执行流程</h3><p><img src="https://feng-1256121024.cos.ap-guangzhou.myqcloud.com/blog/img/react-lifecycle.png" alt="image">   </p><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank" rel="noopener">生命周期执行流程</a><br><a href="https://zh-hans.reactjs.org/docs/react-component.html#static-getderivedstatefromerror" target="_blank" rel="noopener">React-Component</a></p></div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div style=&quot;font-size:20px;color:#333;line-height:24px;font-family:楷体;&quot;&gt; 
+
+&lt;h2 id=&quot;React生命周期&quot;&gt;&lt;a href=&quot;#React生命周期&quot; class=&quot;headerlink&quot; title=
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://liyang.comeonone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="http://liyang.comeonone.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一问---关于前端安全CSRF</title>
