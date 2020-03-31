@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://liyang.comeonone.com/"/>
-  <updated>2020-03-29T15:20:05.217Z</updated>
+  <updated>2020-03-31T15:14:02.873Z</updated>
   <id>http://liyang.comeonone.com/</id>
   
   <author>
@@ -15,6 +15,53 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>每日一问---js继承</title>
+    <link href="http://liyang.comeonone.com/2020/03/31/daily-20200331/"/>
+    <id>http://liyang.comeonone.com/2020/03/31/daily-20200331/</id>
+    <published>2020-03-30T16:00:00.000Z</published>
+    <updated>2020-03-31T15:14:02.873Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://liyang.comeonone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="http://liyang.comeonone.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>每日一问---es2020</title>
+    <link href="http://liyang.comeonone.com/2020/03/30/daily-20200330/"/>
+    <id>http://liyang.comeonone.com/2020/03/30/daily-20200330/</id>
+    <published>2020-03-29T16:00:00.000Z</published>
+    <updated>2020-03-31T14:38:25.835Z</updated>
+    
+    <content type="html"><![CDATA[<div style="font-size:20px;color:#333;line-height:24px;font-family:楷体;"><h2 id="ES2020新增方法"><a href="#ES2020新增方法" class="headerlink" title="ES2020新增方法"></a>ES2020新增方法</h2><h3 id="类的私有属性"><a href="#类的私有属性" class="headerlink" title="类的私有属性"></a><strong>类的私有属性</strong></h3><hr><p><font style="color:blue;">通过在变量或函数前面添加一个简单的散列符号，我们可以将它们完全保留在类内部使用。</font></p><p>静态方法</p><pre><code>类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法”。</code></pre><p>静态属性</p><pre><code>静态属性指的是 Class 本身的属性，即Class.propName，而不是定义在实例对象（this）上的属性。</code></pre><p>私有属性 私有方法</p><pre><code>私有方法和私有属性，是只能在类的内部访问的方法和属性，外部不能访问。class InnerStatic {    // 静态属性    static staticProps = &apos;string&apos;;     // 静态方法    static staticFun = ()=&gt;{};        // 私有属性    #message = 1;     // 私有方法    #getMessage(){         console.log(&apos;#message values&apos;, this.#message);    }    实例方法    getMessage(){    }}let instance = new InnerStatic();instance.getMessage();console.log(instance.#message) // Private name #message is not defined</code></pre><h3 id="无效合并操作符"><a href="#无效合并操作符" class="headerlink" title="无效合并操作符"></a><strong>无效合并操作符</strong></h3><hr><p><font style="color:blue;">因为 JavaScript 是动态类型的，所以在分配变量时需要牢记 JavaScript 对真 / 假值的处理。 如果我们有一个具有一些值的对象，有时候我们希望允许一些技术上有误的值，比如一个空字符串或者数字0。 设置默认值很快会变得烦人，因为它会覆盖应该是有效值的内容。</font></p><pre><code>let person = {  profile: {    name: &apos;&apos;,    age: 0  }};console.log(&apos;无效合并操作符&apos;, person.profile.name || &apos;Anonymous&apos;); // Anonymousconsole.log(&apos;无效合并操作符&apos;, person.profile.name ?? &apos;Anonymous&apos;); // &apos;&apos;</code></pre><h3 id="可选的链接操作符"><a href="#可选的链接操作符" class="headerlink" title="可选的链接操作符"></a><strong>可选的链接操作符</strong></h3><hr><p><font style="color:blue;">在点符号之前添加一个问号，我们可以使值的路径的任何部分可选</font></p><pre><code>let person = {};// console.log(person.profile.name ?? &apos;&apos;);  // Cannot read property &apos;name&apos; of undefinedconsole.log(person?.profile?.name);  // undefinedif (person?.profile?.name) {  console.log(&apos;have name props&apos;);} else {  console.log(&apos;not exits name props&apos;);}可用于判断数据属性是否存在，不必写成冗长的 person &amp;&amp; person.profile &amp;&amp; person.profile.name的格式</code></pre><h3 id="BigInt"><a href="#BigInt" class="headerlink" title="BigInt"></a><strong>BigInt</strong></h3><hr><p><font style="color:blue;">通过在末尾加上字母 n 解决js中数字超过最大数值精度错误问题</font></p><pre><code>const max = Number.MAX_SAFE_INTEGER;console.log(max); // 9007199254740991console.log(max + 1);console.log(max + 2);console.log(max + 3);const bigNum = 1000000000000000000000000000000000000000000000n;console.log(bigNum + 1n);  // 1000000000000000000000000000000000000000000001n</code></pre><h3 id="Dynamic-Import-动态导入"><a href="#Dynamic-Import-动态导入" class="headerlink" title="Dynamic Import 动态导入"></a><strong>Dynamic Import 动态导入</strong></h3><hr><p><font style="color:blue;">如果您的文件中充满了实用函数，其中一些函数可能很少被使用，导入它们的所有依赖项可能只是浪费资源。 现在我们可以使用 async / await 在需要的时候动态导入依赖关系。</font></p><pre><code>math.jsconst add = (num1, num2) =&gt; num1 + num2;export { add };---------------------index.jsconst doMath = async (num1, num2) =&gt; {  if (num1 &amp;&amp; num2) {    const math = await import(&apos;./math.js&apos;);    console.log(math.add(5, 10));  };};doMath(4, 2);</code></pre><h3 id="Promise-allSettled"><a href="#Promise-allSettled" class="headerlink" title="Promise.allSettled"></a><strong>Promise.allSettled</strong></h3><hr><p><font style="color:blue;">接受一组 Promise 实例作为参数，包装成一个新的 Promise 实例。只有等到所有这些参数实例都返回结果，不管是fulfilled还是rejected，包装实例才会结束。</font></p><pre><code>const p1 = new Promise((res, rej) =&gt; setTimeout(res, 1000));const p2 = new Promise((res, rej) =&gt; setTimeout(rej, 1000));Promise.allSettled([p1, p2]).then(data =&gt; console.log(data));// [//   Object { status: &quot;fulfilled&quot;, value: undefined},//   Object { status: &quot;rejected&quot;, reason: undefined}// ]</code></pre><hr><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://alligator.io/js/es2020/" target="_blank" rel="noopener">es2020</a></p></div><div style="display:none;font-size:18px;color:#333;line-height:24px;font-family:楷体;"><hr><p>title: 每日一问—<br>date: 2020-03-28<br>category: 技术          # 归类<br>tag: [‘技术’]               # 标签<br>tagcloud: [‘技术’]          # 云标签<br>archives: [‘技术’,’每日问题’,’web安全’]           # 归档</p><hr><p>页面字体以及格式</p><pre><code>&lt;div style=&quot;font-size:18px;color:#333;line-height:24px;font-family:楷体;&quot;&gt; &lt;/div&gt;</code></pre><p>问题标题</p><pre><code>&lt;font style=&quot;font-weight:700&quot;&gt;&lt;/font&gt;  &lt;strong&gt;&lt;strong&gt;</code></pre><p>引用</p><pre><code>&lt;font style=&quot;color:blue;&quot;&gt;&lt;/font&gt;</code></pre><p>一般层级</p><pre><code>#### ##### ######</code></pre><p>注意事项</p><pre><code>&lt;font style=&quot;color:red;&quot;&gt;&lt;/font&gt;</code></pre><p>加重</p><pre><code>&lt;font style=&quot;font-weight:700;color:#333;&quot;&gt;&lt;/font&gt;</code></pre> </div>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;div style=&quot;font-size:20px;color:#333;line-height:24px;font-family:楷体;&quot;&gt;
+
+&lt;h2 id=&quot;ES2020新增方法&quot;&gt;&lt;a href=&quot;#ES2020新增方法&quot; class=&quot;headerlink&quot; title
+      
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://liyang.comeonone.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="技术" scheme="http://liyang.comeonone.com/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>每日一问---React生命周期</title>
@@ -45,11 +92,11 @@
   </entry>
   
   <entry>
-    <title>每日一问---关于前端安全CSRF</title>
+    <title>每日一问---前端安全CSRF</title>
     <link href="http://liyang.comeonone.com/2020/03/28/daily-20200328/"/>
     <id>http://liyang.comeonone.com/2020/03/28/daily-20200328/</id>
     <published>2020-03-27T16:00:00.000Z</published>
-    <updated>2020-03-28T03:01:41.636Z</updated>
+    <updated>2020-03-31T14:39:29.432Z</updated>
     
     <content type="html"><![CDATA[<div style="font-size:18px;color:#333;line-height:24px;font-family:楷体;"><h3 id="关于前端安全CSRF"><a href="#关于前端安全CSRF" class="headerlink" title="关于前端安全CSRF"></a>关于前端安全CSRF</h3><blockquote><p>跨站请求伪造（英語：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。</p></blockquote></div><h4 id="1-攻击原理"><a href="#1-攻击原理" class="headerlink" title="1.攻击原理"></a><strong>1.攻击原理</strong></h4><p>假设用户登录到不受保护的某银行网站，并且使用会话 cookie 或 JWT cookie 进行身份验证，并进行转账操作</p><pre><code>假如其转账操作的URL地址如下： http://www.examplebank.com/withdraw?account=AccoutName&amp;amount=1000&amp;for=PayeeName</code></pre><p>攻击者欺骗用户执行脚本(通过点击垃圾邮件链接或类似) </p><pre><code>用户进入第三方网站 &lt;img src=&quot;http://www.examplebank.com/withdraw?account=Alice&amp;amount=1000&amp;for=Badman</code></pre><p>由于不受保护的某银行网站的登录信息未过期，服务器将成功地验证用户身份并执行交易</p><p><strong>在CSRF中攻击者并不直接获取用户信息，其只是欺骗用户浏览器，让其以用户的名义进行操作</strong></p><h4 id="2-攻击流程"><a href="#2-攻击流程" class="headerlink" title="2.攻击流程"></a><strong>2.攻击流程</strong></h4><p><img src="https://feng-1256121024.cos.ap-guangzhou.myqcloud.com/blog/img/CSRF-ATTACH.png" alt="image">    </p><h4 id="3-预防策略"><a href="#3-预防策略" class="headerlink" title="3.预防策略"></a><strong>3.预防策略</strong></h4><h5 id="1-检查Referer字段"><a href="#1-检查Referer字段" class="headerlink" title="1.检查Referer字段"></a><strong>1.检查Referer字段</strong></h5><p>HTTP头中有一个Referer字段，这个字段用以标明请求来源于哪个地址。</p><p><img src="https://feng-1256121024.cos.ap-guangzhou.myqcloud.com/blog/img/Referer.png" alt="image"></p><p>在处理敏感数据请求时，通常来说，Referer字段应和请求的地址位于同一域名下。</p><p>以上面银行操作为例，</p><pre><code>Referer字段地址通常应该是转帐按钮所在的网页地址，应该也位于www.examplebank.com之下。</code></pre><p>而如果是CSRF攻击传来的请求，Referer字段会是包含恶意网址的地址，</p><pre><code>不会位于www.examplebank.com之下，这时候服务器就能识别出恶意的访问。</code></pre><p>但存在恶意篡改其Referer字段的可能</p><h5 id="2-token验证"><a href="#2-token验证" class="headerlink" title="2.token验证"></a><strong>2.token验证</strong></h5><pre><code>既然攻击者利用第三方cookie的方式去获取用户信息，并验证用户身份这种方式进行攻击，可以采取增加一个独立的token进行认证，在用户登录信任网站的时候，服务端生成一个唯一token并给到用户，用户每次和服务端通信，都会校验token的有效性，如果校验token失败，则认为可能是 CSRF 攻击而拒绝该请求。</code></pre><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><p><a href="https://zh.wikipedia.org/wiki/%E8%B7%A8%E7%AB%99%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0" target="_blank" rel="noopener">wiki百科</a><br><a href="https://dev.to/maleta/cors-xss-and-csrf-with-examples-in-10-minutes-35k3" target="_blank" rel="noopener">XSS CSRF 例子</a></p><div style="display:none;font-size:18px;color:#333;line-height:24px;font-family:楷体;"><hr><p>title: 每日一问—<br>date: 2020-03-28<br>category: 技术          # 归类<br>tag: [‘技术’]               # 标签<br>tagcloud: [‘技术’]          # 云标签<br>archives: [‘技术’,’每日问题’,’web安全’]           # 归档</p><hr><p>页面字体以及格式</p><pre><code>&lt;div style=&quot;font-size:18px;color:#333;line-height:24px;font-family:楷体;&quot;&gt; &lt;/div&gt;</code></pre><p>问题标题</p><pre><code>&lt;font style=&quot;font-weight:700&quot;&gt;&lt;/font&gt;</code></pre><p>引用</p><pre><code>&lt;font style=&quot;color:blue;&quot;&gt;&lt;/font&gt;</code></pre><p>一般层级</p><pre><code>#### ##### ######</code></pre><p>注意事项</p><pre><code>&lt;font style=&quot;color:red;&quot;&gt;&lt;/font&gt;</code></pre><p>加重</p><pre><code>&lt;font style=&quot;font-weight:700;color:#333;&quot;&gt;&lt;/font&gt;</code></pre> </div>]]></content>
     

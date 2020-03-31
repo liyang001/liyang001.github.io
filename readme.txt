@@ -1,1 +1,1 @@
-安装教程: http://blog.haoji.me/build-blog-website-by-hexo-github.html?from=xa
+棰勮鍦板潃锛歨ttps://liyang.comeonone.com/
